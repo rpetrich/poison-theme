@@ -14,14 +14,17 @@ body.layout-reverse .wrapper {
 @media (min-width: 48em) {
     .bullet {
         margin-left: 1em;
+        margin-bottom: 0.4em;
+        line-height: 1.2;
         text-decoration-line: underline;
         text-decoration-style: dotted;
         text-decoration-thickness: 1%;
+        text-underline-position: from-font;
     }
     .sub-heading {
         margin-left: 1em;
     }
-    .btn-light-dark svg {
+    .btn-light-dark svg, .btn-close svg {
         margin: auto;
         width: 20px;
         height: 20px;
@@ -31,6 +34,9 @@ body.layout-reverse .wrapper {
         overflow-y: auto;
         padding-right: 2rem;
         flex-grow: 1;
+    }
+    .menubar, .light-dark .btn-close {
+        display: none;
     }
 }
 
@@ -48,11 +54,17 @@ body.layout-reverse .wrapper {
     .entries {
         padding-left: 0em;
     }
-    .btn-light-dark svg {
+    .btn-light-dark svg, .btn-close svg, .btn-menu svg {
         margin: auto;
         width: 20px;
         height: 20px;
         color: black;
+    }
+    #menu {
+        display: none;
+    }
+    #menu:target {
+        display: block;
     }
 }
 
@@ -90,8 +102,22 @@ h1, h2, h3, h4, h5, strong {
 .btn-light-dark .sun {
     color: var(--moon-sun-color);
 }
-.btn-light-dark {
+.btn-close .glyph {
+    color: var(--moon-sun-color);
+}
+.btn-menu .glyph {
+    color: var(--moon-sun-color);
+}
+.btn-light-dark svg {
+    display: block;
+}
+.btn-light-dark, .btn-close, .btn-menu {
+    display: inline-flex;
+    box-sizing: border-box;
     padding: 0;
+    padding-block: 1px;
+    padding-inline: 6px;
+    font-size: medium;
     margin: 1em;
     border-radius: 50%;
     border: none;
@@ -100,6 +126,10 @@ h1, h2, h3, h4, h5, strong {
     width: 40px;
     height: 40px;
     background-color: var(--moon-sun-background-color);
+    opacity: 50%;
+}
+.btn-menu {
+    background-color: transparent;
 }
 /* ************************** */
 body {
@@ -128,7 +158,7 @@ body > .wrapper {
    margin: 5.5em 0;
 }
 
-.sidebar {
+.sidebar, .menubar {
     background-color: var(--sidebar-bg-color);
 }
 .lead {

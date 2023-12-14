@@ -1,4 +1,13 @@
-<aside class="sidebar">
+<aside class="menubar" align="right">
+    <a href="#menu" class="btn-menu">
+        <svg class="glyph" xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 100 80">
+            <rect fill="currentColor" width="100" height="8"></rect>
+            <rect fill="currentColor" y="36" width="100" height="8"></rect>
+            <rect fill="currentColor" y="72" width="100" height="8"></rect>
+        </svg>
+    </a>
+</aside>
+<aside class="sidebar" id="menu">
     <div class="container sidebar-sticky">
         {{ partial "light_dark.html" . }}
         {{ partial "sidebar/title.html" . }}
